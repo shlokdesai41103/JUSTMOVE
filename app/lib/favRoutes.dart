@@ -41,4 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  floatingActionButton: FloatingActionButton(
+    backgroundColor: Colors.blue,
+    foregroundColor: Colors.white,
+    onPressed: () {
+      //respond
+    },
+    icon: Icon(Icons.add),
+    label: Text('Add new route'),
+  ),
 }
