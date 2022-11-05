@@ -39,16 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
       body: const Center(
         child: Text('This is where the users favorites will be displayed'),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        icon: const Icon(Icons.add),
+        backgroundColor: Colors.blue,
+        label: const Text('New'),
+      ),
     );
   }
-
-  floatingActionButton: FloatingActionButton(
-    backgroundColor: Colors.blue,
-    foregroundColor: Colors.white,
-    onPressed: () {
-      //respond
-    },
-    icon: Icon(Icons.add),
-    label: Text('Add new route'),
-  ),
 }
