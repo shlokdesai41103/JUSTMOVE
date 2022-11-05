@@ -36,8 +36,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Your Commutes'),
       ),
-      body: const Center(
-        child: Text('This is where the users favorites will be displayed'),
+      body: Container(
+        height: MediaQuery.of(context).size.height * .75,
+        child: ListView(),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {},
