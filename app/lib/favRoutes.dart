@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:app/main.dart';
 import 'package:flutter/material.dart';
+import 'routeDialog.dart';
 
 void main() {
   runApp(const favRoutes());
@@ -30,16 +31,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<String> items = ["1", "2", "3", "4"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Commutes'),
       ),
-      body: Container(
-        height: MediaQuery.of(context).size.height * .75,
-        child: ListView(),
-      ),
+      body: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (BuildContext ctxt, int index) {
+            return Text(items[index]);
+          }),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {},
         icon: const Icon(Icons.add),
