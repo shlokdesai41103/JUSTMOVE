@@ -1,62 +1,10 @@
-// import 'package:flutter/material.dart';
-
-// void main() => runApp(const MyApp());
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     const appTitle = 'Form Styling Demo';
-//     return MaterialApp(
-//       title: appTitle,
-//       home: Scaffold(
-//         appBar: AppBar(
-//           title: const Text(appTitle),
-//         ),
-//         body: const MyCustomForm(),
-//       ),
-//     );
-//   }
-// }
-
-// class MyCustomForm extends StatelessWidget {
-//   const MyCustomForm({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       crossAxisAlignment: CrossAxisAlignment.start,
-//       children: <Widget>[
-//         Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-//           child: TextFormField(
-//             decoration: const InputDecoration(
-//               border: UnderlineInputBorder(),
-//               labelText: 'Enter your username',
-//             ),
-//           ),
-//         ),
-//         Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-//           child: TextFormField(
-//             decoration: const InputDecoration(
-//               border: UnderlineInputBorder(),
-//               labelText: 'Enter your Password',
-//             ),
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
-import 'package:helloworld/signup.dart';
+import 'package:helloworld/main.dart';
 
-void main() => runApp(const MyApp());
+//oid main() => runApp(const MyApp2());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp2 extends StatelessWidget {
+  const MyApp2({Key? key}) : super(key: key);
 
   static const String _title = 'JustMove';
 
@@ -69,20 +17,20 @@ class MyApp extends StatelessWidget {
           title: const Text(_title),
           backgroundColor: Colors.red,
         ),
-        body: const MyStatefulWidget(),
+        body: const MyStatefulWidget2(),
       ),
     );
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
+class MyStatefulWidget2 extends StatefulWidget {
+  const MyStatefulWidget2({Key? key}) : super(key: key);
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<MyStatefulWidget2> createState() => _MyStatefulWidgetState2();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _MyStatefulWidgetState2 extends State<MyStatefulWidget2> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -106,9 +54,29 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  'Sign in',
+                  'Sign up',
                   style: TextStyle(fontSize: 20),
                 )),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: TextField(
+                controller: nameController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'First Name',
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: TextField(
+                controller: nameController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Last Name',
+                ),
+              ),
+            ),
             Container(
               padding: const EdgeInsets.all(10),
               child: TextField(
@@ -135,24 +103,28 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(primary: Colors.red),
-                  child: const Text('Login'),
+                  child: const Text('Sign Up'),
                   onPressed: () {
-                    //print(nameController.text);
-                    //print(passwordController.text);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MyApp()),
+                    );
+                    // print(nameController.text);
+                    // print(passwordController.text);
                   },
                 )),
             Row(
               children: <Widget>[
-                const Text('Don\'t have an account?'),
+                const Text('Already have an account?'),
                 TextButton(
                   child: const Text(
-                    'Sign up',
+                    'log in',
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const MyApp2()),
+                      MaterialPageRoute(builder: (context) => const MyApp()),
                     );
                     //signup screen
                   },
