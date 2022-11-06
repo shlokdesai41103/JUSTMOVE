@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFF6F35A5);
-const kPrimaryLightColor = Color(0xFFF1E6FF);
-
-const double defaultPadding = 16.0;
+class AppConstants {
+  static const String projectId = "63677c759458b4efa72b";
+  static const String endpoint = "http://10.0.2.2/v1";
+}

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/main.dart';
-
-//oid main() => runApp(const MyApp2());
+import 'dart:convert';
 
 class MyApp2 extends StatelessWidget {
   const MyApp2({Key? key}) : super(key: key);
@@ -114,6 +112,7 @@ class _MyStatefulWidgetState2 extends State<MyStatefulWidget2> {
                   },
                 )),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const Text('Already have an account?'),
                 TextButton(
@@ -130,7 +129,6 @@ class _MyStatefulWidgetState2 extends State<MyStatefulWidget2> {
                   },
                 )
               ],
-              mainAxisAlignment: MainAxisAlignment.center,
             ),
           ],
         ));
