@@ -31,7 +31,7 @@
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="appwrite-callback-JustMove" />
+            <data android:scheme="appwrite-callback-6366a712636dad4fdee1" />
         </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.
