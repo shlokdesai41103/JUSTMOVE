@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:app/main.dart';
 import 'package:flutter/material.dart';
-import 'routeDialog.dart';
 
 void main() {
   runApp(const favRoutes());
@@ -16,7 +15,7 @@ class favRoutes extends StatelessWidget {
     return MaterialApp(
       title: 'Favourite Routes',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: const MyHomePage(),
     );
@@ -31,14 +30,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<String> items0 = ["1", "2", "3", "5", "6"];
-  List<String> items1 = ["1", "2", "3", "4", "5"];
+  List<String> items0 = ["TTC-116", "TTC-115", "TTC-117", "TTC-118"];
+  List<String> items1 = [
+    "Kennedy Station",
+    "Finch West Station",
+    "Thistle Down",
+    "Jane and Finch"
+  ];
   List<List<String>> items2 = [
-    ["1", "2", "3", "4"],
-    ["1", "2", "3", "4"],
-    ["1", "2", "3", "4"],
-    ["1", "2", "3", "4"],
-    ["1", "2", "3", "4"]
+    ["11:40", "12:40", "13:40", "14:40"],
+    ["11:40", "12:40", "13:40", "14:40"],
+    ["11:40", "12:40", "13:40", "14:40"],
+    ["11:40", "12:40", "13:40", "14:40"],
   ];
 
   @override
@@ -90,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {},
         icon: const Icon(Icons.add),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.red,
         label: const Text('New'),
       ),
     );
