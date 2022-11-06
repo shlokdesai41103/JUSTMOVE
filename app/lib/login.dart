@@ -1,3 +1,4 @@
+import 'package:app/favRoutes.dart';
 import 'package:flutter/material.dart';
 import 'signup.dart';
 import 'package:appwrite/appwrite.dart';
@@ -86,6 +87,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   style: ElevatedButton.styleFrom(primary: Colors.red),
                   child: const Text('Login'),
                   onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const FavRoutes()),
+                    );
                     //print(nameController.text);
                     //print(passwordController.text);
                   },

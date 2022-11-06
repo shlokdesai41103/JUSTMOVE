@@ -1,14 +1,15 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:app/main.dart';
+import 'package:app/newroute2.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const favRoutes());
+  runApp(const FavRoutes());
 }
 
-class favRoutes extends StatelessWidget {
-  const favRoutes({Key? key}) : super(key: key);
+class FavRoutes extends StatelessWidget {
+  const FavRoutes({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +92,12 @@ class _MyHomePageState extends State<MyHomePage> {
             );
           }),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MyApp3()),
+          );
+        },
         icon: const Icon(Icons.add),
         backgroundColor: Colors.red,
         label: const Text('New'),

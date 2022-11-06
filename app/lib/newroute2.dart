@@ -31,19 +31,22 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   // Initial Selected Value
-  String dropdownvalue = 'Item 1';
+  String dropdownvalue = 'Kipling';
+  String dropdownvalue2 = 'TTC-945';
 
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   // List of items in our dropdown menu
   var items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
+    'Kipling',
+    'Islington',
+    'Finch',
+    'Albion',
+    'Jane',
   ];
+
+  var items2 = ['TTC-945', 'TTC-127', 'TTC-115', 'TTC-12', 'TTC-38'];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -64,14 +67,39 @@ class _MyHomePageState extends State<MyHomePage> {
               'add new favourite',
               style: TextStyle(fontSize: 20),
             )),
+        // Container(
+        //   padding: const EdgeInsets.all(10),
+        //   child: TextField(
+        //     controller: nameController,
+        //     decoration: const InputDecoration(
+        //       border: OutlineInputBorder(),
+        //       labelText: 'Bus #',
+        //     ),
+        //   ),
+        // ),
         Container(
-          padding: const EdgeInsets.all(10),
-          child: TextField(
-            controller: nameController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Bus #',
-            ),
+          padding: const EdgeInsets.fromLTRB(15, 20, 10, 0),
+          child: DropdownButton(
+            // Initial Value
+            value: dropdownvalue2,
+
+            // Down Arrow Icon
+            icon: const Icon(Icons.keyboard_arrow_down),
+
+            // Array list of items
+            items: items2.map((String items2) {
+              return DropdownMenuItem(
+                value: items2,
+                child: Text(items2),
+              );
+            }).toList(),
+            // After selecting the desired option,it will
+            // change button value to selected value
+            onChanged: (String? newValue) {
+              setState(() {
+                dropdownvalue2 = newValue!;
+              });
+            },
           ),
         ),
         Container(
