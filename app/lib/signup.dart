@@ -1,6 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/main.dart';
 
+
+/* For Database Storing
+import 'package:appwrite/appwrite.dart';
+
+Client appwrite = Client()
+    .setEndpoint('https://100.67.12.13/v1%27)
+    .setProject('6366a712636dad4fdee1')
+    .setSelfSigned(status: true);
+
+
+Account account = Account(appwrite);
+
+Store both input fields when inputted, then create the account (This goes later in code, wherever we store the inputs)
+String userID;
+String password;
+account.create(userID, "", password);
+
+*/
+
 //oid main() => runApp(const MyApp2());
 
 class MyApp2 extends StatelessWidget {
