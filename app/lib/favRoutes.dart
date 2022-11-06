@@ -3,6 +3,15 @@ import 'dart:io';
 import 'package:app/main.dart';
 import 'package:flutter/material.dart';
 
+import 'package:appwrite/appwrite.dart';
+
+Client appwrite = Client()
+    .setEndpoint('https://100.67.12.13/v1');
+    .setProject('6366a712636dad4fdee1')
+    .setSelfSigned(status: true);
+
+
+
 void main() {
   runApp(const favRoutes());
 }
