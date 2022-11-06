@@ -6,6 +6,23 @@ import 'package:flutter/material.dart';
 const List<String> bus = <String>['116'];
 const List<String> station = <String>['Staines Rd', 'Kingston Rd'];
 
+
+/*
+import 'package:appwrite/appwrite.dart';
+
+Client appwrite = Client()
+    .setEndpoint('https://100.67.12.13/v1')
+    .setProject('6366a712636dad4fdee1')
+    .setSelfSigned(status: true);
+
+
+Databases databases = Databases(appwrite);
+//Stores busses
+List<String> bus = <String>['TTC-116','TTC-46','TTC-86'];
+List<String> station = databases.listDocuments("JustMove-DB" , "SELECTED VALUE FROM BUS FIELD");
+
+*/
+
 void main() {
   runApp(const newroute());
 }
@@ -51,7 +68,7 @@ class DropdownButtonExample extends StatefulWidget {
 }
 
 class _DropdownButtonExampleState extends State<DropdownButtonExample> {
-  String dropdownValue = list.first;
+  String dropdownValue = bus.first;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +84,7 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
           dropdownValue = value!;
         });
       },
-      items: list.map<DropdownMenuItem<String>>((String value) {
+      items: bus.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Text(value),
