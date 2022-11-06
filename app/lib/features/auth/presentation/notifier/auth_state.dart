@@ -16,11 +16,30 @@ class AuthState extends ChangeNotifier {
         .setProject(AppConstants.projectId);
     account = Account(client);
   }
+  //
+  // _checkIsLoggedIn() async {
+  //   try {
+  //     var res =
+  //         await account.createEmailSession(email: email, password: password);
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
 
   login(String email, String password) async {
     try {
       var result =
-          await account.createSession(email: email, password: password);
+          await account.createEmailSession(email: email, password: password);
+      print(result);
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  createAccount(String name, String email, String password) async {
+    try {
+      var result = await account.create(
+          email: email, password: password, name: name, userId: '1');
       print(result);
     } catch (e) {
       print(e);

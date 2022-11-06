@@ -1,5 +1,7 @@
-import 'package:app/authState.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../notifier/auth_state.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -41,9 +43,13 @@ class _LoginPageState extends State<LoginPage> {
                 obscureText: true,
                 decoration: InputDecoration(hintText: "password"),
               ),
-              RaisedButton(child: Text("Login"), onPressed: () {
-                AuthState state =
-              })
+              RaisedButton(
+                  child: Text("Login"),
+                  onPressed: () {
+                    AuthState state =
+                        Provider.of<AuthState>(context, listen: false);
+                    state.login(_email.text, _password.text);
+                  })
             ],
           ),
         ));
